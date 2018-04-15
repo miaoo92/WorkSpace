@@ -30,11 +30,11 @@ public class UserController {
 
     @PostMapping("/web/mvc/user/save")
     public Boolean save(@RequestBody User user) throws ExecutionException, InterruptedException {
-        /*Future<Boolean> future = (Future<Boolean>) executorService.submit(()-> {
+        Future<Boolean> future = (Future<Boolean>) executorService.submit(()-> {
             userRepository.save(user);
         });
-        return  future.get();*/
-        return userRepository.save(user);
+        return  future.get();
+//        return userRepository.save(user);
     }
 
 
