@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- namespace命名空间，作用是对sql进行分类化管理，理解sql隔离，注意：使用mapper代理方法开发，namespace有着特殊重要作用-->
+<mapper namespace="com.itcast.mybatis.mapper.UserMapper">
+
+    <!--定义sql片段
+    id：sql片段的唯一标识
+    经验;是基于单表来定义sql片段,这样的话，sql片段的可重用性才高
+    在sql片段中不要使用where-->
+    <sql id="query_user_where">
+        <if test="userCustom!=null">
+            <if test="userCustom.ename!=null and userCustom.ename!=''">
+                AND ename LIKE '%${userCustom.ename}%'
+            </if>
+            <if test="userCustom.job!=null and userCustom.job!=''">
+                AND job = '${userCustom.job}'
+            </if>
+        </if>
+        <if test="empnos!=null">
+           <!--使用foreach遍历传入的ids
+            collection:指定传入对象的集合属性
+            item：每个遍历集合的对象
+            open：开始遍历时拼接的串
+            close:结束遍历时拼接的串
+            separator:遍历的两个对象中拼接的串-->
+           <!--使用下面的串拼接
+            AND (empno=1 OR empno=2 OR empno=3)-->
+            <!--<foreach collection="empnos" item="user_id" open="AND (" close=")" separator="OR">
+                &lt;!&ndash;每个遍历需要拼接的串&ndash;&gt;
+                empno = #{user_id}
+            </foreach>-->
+
+            <foreach collection="empnos" item="user_id" open="and empno in(" close=")" separator=",">
+                #{user_id}
+            </foreach>
+        </if>
+    </sql>
+
+    <!--  在映射文件中配置很多sql语句 -->
+    <!--parameterType:指定输入参数的类型，这里指定int类型-->
+    <!--#{}标志一个占位符号-->
+    <!--#{empno}:其中empno表示接受输入的参数，参数名称就是empno，如果输入参数是简单类型，#{}中的参数可以任意，可以value或者其它名称-->
+    <!--resultType:指定sql输出结果的所映射的java对象类型，select指定resultType表示将单条记录映射成java对象-->
+    <select id="findUserById" parameterType="int" resultType="com.itcast.mybatis.po.User">
+        SELECT * FROM emp_test WHERE empno=#{empno}
+    </select>
+
+    <!--根据用户名称模糊查询用户信息,可能返回多条
+    resultType:指定就是单条记录所映射的java对象类型
+    ${}:表示拼接sql串，将接收到参数的内容不加任何修饰拼接在sql中
+    使用${}拼接sql，容易引起sql注入
+    ${}：接收输入参数的内容，如果传入类型是简单类型，${}中只能使用value
+    -->
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.itcast.mybatis.po.User">
+        SELECT * FROM emp_test WHERE ename LIKE '%${value}%'
+    </select>
+
+
+    <!--用户信息综合查询
+    ${userCustom.ename}：取出包装对象中姓名值
+    -->
+    <select id="findUserByPara" parameterType="com.itcast.mybatis.po.UserQueryVo" resultType="com.itcast.mybatis.po.UserCustom">
+        SELECT * FROM emp_test
+       <!--where可以自动去掉条件中第一个and-->
+        <where>
+            <!--引用sql片段的id，如果refid指定的id不在本mapper中，需要在前面加namespace-->
+            <include refid="query_user_where"></include>
+        </where>
+    </select>
+
+    <!--用户信息综合查询总数-->
+
+    <select id="findUserCount" parameterType="com.itcast.mybatis.po.UserQueryVo" resultType="int">
+        SELECT count(*) FROM emp_test
+        <where>
+            <include refid="query_user_where"></include>
+        </where>
+    </select>
+
+    <!--添加用户
+    parameterType:指定输入参数类型是pojo（包含用户信息）
+    #{}中指定pojo的属性名，接收到pojo对象的属性值，Mybatis通过OGNL获取对象的属性值
+    -->
+    <insert id="addUser" parameterType="com.itcast.mybatis.po.User">
+        <!--
+             将插入数据的主键返回，返回到user对象中
+             select LAST_INSERT_ID():得到insert进去记录的主键值，只适用于自增主键
+             keyProperty:将查询到的主键值设置到parameterType指定的对象的哪个属性值
+             order:相对于insert语句来说 select LAST_INSERT_ID()的执行顺序
+             -->
+        <selectKey keyProperty="empno" order="AFTER" resultType="java.lang.Integer">
+            select LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO emp_test ( ename, job, mgr, sal, deptno,hiredate) VALUE
+        (#{ename},#{job},#{mgr},#{sal},#{deptno},#{hiredate})
+        <!--对于非自增主键的表，使用uuid()的方式生成主键
+            使用MySQL的uuid()生成主键
+            执行过程：
+            首先通过uuid()得到主键，将主键设置到user对象的id属性中
+            其次在insert执行时，从user对象中取出id属性值
+            <selectKey keyProperty="empno" order="BEFORE" resultType="java.lang.String">
+                SELECT uuid()
+            </selectKey>
+         INSERT INTO emp_test (empno, ename, job, mgr, sal, deptno,hiredate) VALUE
+        (#(empno),#{ename},#{job},#{mgr},#{sal},#{deptno},#{hiredate})
+        如果不写<selectKey>标签内的语句，则会返回主键0
+
+        对于Oracle数据库，写法相同，关键在于select语句的写法
+        改写为：SELECT  序列名.nextval()
+        -->
+    </insert>
+
+    <!--删除用户
+    根据empno删除用户，需要输入empno值
+    -->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        DELETE FROM emp_test WHERE empno=#{empno}
+    </delete>
+
+    <!--根据empno更新用户
+        分析：需要传入用户的empno
+              需要传入用户的更新信息
+              parameterType指定user对象，包括empno和更新信息。
+          注意：empno必须存在
+          #{empno}:从输入user对象中获取empno属性值
+    -->
+    <update id="updateUser" parameterType="com.itcast.mybatis.po.User">
+        UPDATE emp_test SET ename=#{ename}, job=#{job}, mgr=#{mgr}, sal=#{sal}, hiredate=#{hiredate}
+        WHERE empno = #{empno}
+    </update>
+
+</mapper>

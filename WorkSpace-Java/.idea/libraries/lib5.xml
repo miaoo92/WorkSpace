@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/spring-expression-3.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/spring-core-3.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/spring-webmvc-3.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/spring-beans-3.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/spring-web-3.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.8-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SpringMVC1/WebRoot/WEB-INF/lib/spring-context-3.2.8.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

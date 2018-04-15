@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="lib10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-tx-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/commons-io-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/log4j-1.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/ibatis-2.3.4.726.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-context-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-orm-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/mysql-connector-java-3.1.12-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-core-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-jdbc-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/ojdbc6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-expression-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/commons-pool-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/commons-dbcp-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-beans-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-aop-3.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ecm-parallel/lib/spring-asm-3.0.5.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

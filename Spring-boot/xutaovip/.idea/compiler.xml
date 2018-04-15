@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="factorypattern-0305" />
+        <module name="proxy-0121" />
+        <module name="proxypattern-0312" />
+        <module name="rmi0317" />
+        <module name="singleton-0312" />
+      </profile>
+      <profile name="Annotation profile for xutao-vip" enabled="true">
+        <sourceOutputDir name="../rmi0317/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../rmi0317/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rmi-0317" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="factorypattern-0305" target="1.5" />
+      <module name="proxy-0121" target="1.5" />
+      <module name="proxypattern-0312" target="1.5" />
+      <module name="rmi-0317" target="1.5" />
+      <module name="rmi0317" target="1.5" />
+      <module name="singleton-0312" target="1.5" />
+      <module name="xutaovip" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- 
+	namespace指定了接口名，将此配置文件与接口做
+	关联，这样MyBatis在自动实现接口时才会找到这个
+	对应的配置文件。
+ -->
+<mapper namespace="com.tarena.dao.EmpMapper">
+
+	<!-- 查询全部的员工 -->
+	<select id="findAll"
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp
+	</select>
+
+</mapper>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="rmi-0317:war">
+    <output-path>$PROJECT_DIR$/rmi0317/target</output-path>
+    <root id="archive" name="rmi-0317-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="rmi-0317:war exploded" />
+    </root>
+  </artifact>
+</component>

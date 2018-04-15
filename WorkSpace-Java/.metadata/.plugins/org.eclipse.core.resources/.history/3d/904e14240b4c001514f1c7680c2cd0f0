@@ -1,0 +1,29 @@
+package com.demo;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.jws.WebService;
+
+@WebService(endpointInterface="com.demo.HelloWorld",serviceName="HelloWorld")
+public class HelloWordlImpl implements HelloWorld {
+	
+	Map<Integer,User> users = new LinkedHashMap<Integer, User>();
+
+	public String sayHi(String text) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String sayHiToUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String[] sayHiToUserList(List<User> userList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

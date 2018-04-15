@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<link type="text/css" rel="stylesheet" href="./css/maze.css"/>
+<title>Maze搜索</title>
+</head>
+<body>
+<div id="navigator">
+    <ul>
+	    <li>
+		    <font color="#0000CC">google服务:</font>
+		    <a href="http://www.google.cn/music/homepage?hl=zh-CN&tab=wU">音乐</a>
+		    <a href="http://ditu.google.cn/maps?hl=zh-CN&tab=wl">地图</a>
+			<a href="http://www.google.com.hk/language_tools?hl=zh-CN">翻译</a>
+			&nbsp&nbsp&nbsp&nbsp
+            <font color="#0000CC">娱乐休闲:</font>
+			<a href="http://www.mop.com">猫扑</a>
+			<a href="http://www.tianya.cn/">天涯</a>
+			<a href="http://www.renren.com">人人</a>
+		</li>
+	</ul>
+</div>
+<div id="container">
+  <div id="main_container"> 
+      <div id="jpg_container">
+          <!--<div id="jpg_container_1">
+          </div>-->
+          <div id="jpg_container_2">
+          </div>
+      </div>
+	  <!--<div id=radio_container>
+	      <input type="radio" name="webPage" value = "Apple">网页
+          <input type="radio" name="video" value = "Orange">视频
+          <input type="radio" name="music" value = "Mango">音乐
+		  <input type="radio" name="all" value = "Mango">综合
+	  </div>-->
+      <div id="form_container">
+          <form name="searchForm" action="servlet/GetKeyWordsServlet" method="post">
+		   <div id=radio_container>
+	      <input type="radio" name="searchType" value = "webPage" Checked/>网页
+          <input type="radio" name="searchType" value = "video" />视频
+          <input type="radio" name="searchType" value = "music" />音乐
+		  <input type="radio" name="searchType" value = "hongyan" />红岩网校
+		  <input type="radio" name="searchType" value = "complex" />综合
+	      </div>
+              <input class="input" type="text" name="keyWords" />
+              <input class="submit" type="submit" name="submit" value="Maze搜索" />
+          </form>
+      </div>
+      <div id="info_container">
+          <font size="-1">内容 | 创造 | 价值</font>
+          <P><font size=-1>重庆邮电大学——软件学院</font>
+      </div>
+  </div>
+</div>
+</body>
+</html>

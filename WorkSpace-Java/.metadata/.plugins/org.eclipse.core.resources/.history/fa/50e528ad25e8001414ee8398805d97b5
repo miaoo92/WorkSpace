@@ -1,0 +1,155 @@
+package servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import jeasy.analysis.MMAnalyzer;
+
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.index.CorruptIndexException;
+import org.apache.lucene.queryParser.MultiFieldQueryParser;
+import org.apache.lucene.queryParser.ParseException;
+import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.search.Filter;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
+import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.highlight.Highlighter;
+import org.apache.lucene.search.highlight.QueryScorer;
+import org.apache.lucene.search.highlight.SimpleFragmenter;
+import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
+
+import analyzer.SearchType;;
+
+public class GetKeyWordsServlet extends HttpServlet {
+
+	/**
+	 * The default serial version id.
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Destruction of the GetKeyWordsServlet
+	 */
+	public void destroy() {
+		super.destroy();
+	}
+
+	/**
+	 * The doPost method of the GetKeyWordsServlet
+	 * 
+	 * This method is called when a form has its tag value method equals to
+	 * post.
+	 * 
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
+	 */
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//重新定义请求和响应的编码,对中文进行正确的解码
+		request.setCharacterEncoding("gbk");
+		response.setContentType("text/html;charset=gbk");
+		//设置默认的信息检索库
+        String searchPath = "G:\\anysearch_index";
+        //获取用户提取的欲搜索的关键字
+		String keyWords = (String) request.getParameter("keyWords");
+		
+		//对用户搜索的类别进行判断
+		String searchType = request.getParameter("searchType");
+		if(searchType != null)
+		if(!searchType.equals("webPage") && (searchType != null)) {
+			searchPath = SearchType.getSearchType(searchType);
+		}
+		
+		String startLocationTemp = request.getParameter("startLocation");
+		if(startLocationTemp != null) {
+		int startLocation = Integer.parseInt(startLocationTemp);
+		System.out.println(startLocation);
+		}
+        
+		Analyzer analyzer = null;
+		Highlighter highlighter = null;
+		List<Document> list = new ArrayList<Document>();
+		Integer totalCount = null;
+
+		try {
+			IndexSearcher indexSearch = new IndexSearcher(searchPath);
+			analyzer = new MMAnalyzer();
+			String[] field = { "title", "content", "link"};
+			Map<String, Float> boosts = new HashMap<String, Float>();
+			boosts.put("title", 3f);
+			QueryParser queryParser = new MultiFieldQueryParser(field,
+					analyzer, boosts);
+			Filter filter = null;
+			try {
+				Query query = queryParser.parse(keyWords);
+				TopDocs topDocs = indexSearch.search(query, filter, 1000,
+						new Sort(new SortField("size")));
+					System.out.println(topDocs);
+				totalCount = new Integer(topDocs.totalHits);
+				           System.out.println(totalCount);
+				SimpleHTMLFormatter simpleHTMLFormatter = new SimpleHTMLFormatter(
+						"<font color='red'>", "</font>");
+				highlighter = new Highlighter(simpleHTMLFormatter,
+						new QueryScorer(query));
+				highlighter.setTextFragmenter(new SimpleFragmenter(70));
+				for (int i = 0; i < topDocs.totalHits; i++) {
+					ScoreDoc scoreDoc = topDocs.scoreDocs[i];
+					int docSn = scoreDoc.doc; // 文档内部编号
+					Document doc = indexSearch.doc(docSn); // 根据编号取出相应的文档
+					list.add(doc);
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		} catch (CorruptIndexException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher("/result.jsp");
+		request.setAttribute("keyWords", keyWords);
+		request.setAttribute("totalCount", totalCount);
+		request.setAttribute("docList", list);
+		request.setAttribute("analyzer", analyzer);
+		request.setAttribute("highlighter", highlighter);
+		rd.forward(request, response);
+
+	}
+	
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+		this.doPost(request, response);
+	}
+
+	/**
+	 * The initial method of the GetKeyWordsServlet
+	 * 
+	 * @throws ServletException
+	 *             if an error occurs
+	 */
+	public void init() throws ServletException {
+	}
+
+}

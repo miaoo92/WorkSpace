@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.projectreactor:reactor-bus:2.1.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/reactor-bus/2.1.0.BUILD-SNAPSHOT/reactor-bus-2.1.0.BUILD-20151229.121601-627.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/reactor-bus/2.1.0.BUILD-SNAPSHOT/reactor-bus-2.1.0.BUILD-20151229.121601-627-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/reactor-bus/2.1.0.BUILD-SNAPSHOT/reactor-bus-2.1.0.BUILD-20151229.121601-627-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

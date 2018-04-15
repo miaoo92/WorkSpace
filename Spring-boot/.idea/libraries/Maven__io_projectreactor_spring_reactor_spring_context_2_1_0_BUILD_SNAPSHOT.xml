@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.projectreactor.spring:reactor-spring-context:2.1.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/spring/reactor-spring-context/2.1.0.BUILD-SNAPSHOT/reactor-spring-context-2.1.0.BUILD-20151229.124922-310.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/spring/reactor-spring-context/2.1.0.BUILD-SNAPSHOT/reactor-spring-context-2.1.0.BUILD-20151229.124922-310-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/projectreactor/spring/reactor-spring-context/2.1.0.BUILD-SNAPSHOT/reactor-spring-context-2.1.0.BUILD-20151229.124922-310-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyBatis01/MyBatis01.iml" filepath="$PROJECT_DIR$/MyBatis01/MyBatis01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyClient/MyClient.iml" filepath="$PROJECT_DIR$/MyClient/MyClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyServer/MyServer.iml" filepath="$PROJECT_DIR$/MyServer/MyServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MybatisOne/MybatisOne.iml" filepath="$PROJECT_DIR$/MybatisOne/MybatisOne.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NETCTOSS/NETCTOSS.iml" filepath="$PROJECT_DIR$/NETCTOSS/NETCTOSS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Servlet04/Servlet04.iml" filepath="$PROJECT_DIR$/Servlet04/Servlet04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Servlet05/Servlet05.iml" filepath="$PROJECT_DIR$/Servlet05/Servlet05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring01/Spring01.iml" filepath="$PROJECT_DIR$/Spring01/Spring01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring02/Spring02.iml" filepath="$PROJECT_DIR$/Spring02/Spring02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC1/SpringMVC1.iml" filepath="$PROJECT_DIR$/SpringMVC1/SpringMVC1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringUnit01/SpringUnit01.iml" filepath="$PROJECT_DIR$/SpringUnit01/SpringUnit01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentInfo/src/StudentInfo.iml" filepath="$PROJECT_DIR$/StudentInfo/src/StudentInfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentManage/StudentManage.iml" filepath="$PROJECT_DIR$/StudentManage/StudentManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WorkSpace-Java.iml" filepath="$PROJECT_DIR$/WorkSpace-Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ajax/ajax.iml" filepath="$PROJECT_DIR$/ajax/ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jeesite/jeesite.iml" filepath="$PROJECT_DIR$/jeesite/jeesite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.metadata/.me_tcat/work/Catalina/localhost/localhost.iml" filepath="$PROJECT_DIR$/.metadata/.me_tcat/work/Catalina/localhost/localhost.iml" />
+    </modules>
+  </component>
+</project>

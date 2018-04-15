@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyBatis01/WebRoot/WEB-INF/jsp/emp-list.jsp&apos; to &apos;emp_list.jsp&apos;" description="Rename resource &apos;emp-list.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebRoot/WEB-INF/jsp/emp-list.jsp" name="emp_list.jsp" stamp="1445933766120" updateReferences="true"/>
+</session>

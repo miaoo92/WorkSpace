@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="MyBatis01"/>
+		</list>
+		<list key="artifactId">
+			<item value="MyBatis01"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Administrator\Documents\Tencent Files\914983053\FileRecv\_\毕业设计_\searchEngine_server\web_spider"/>
+			<item value="E:\design\jeesite-mybatis-mysql"/>
+			<item value="I:\SpringUnit02"/>
+			<item value="E:\design\jeesite"/>
+			<item value="C:\Users\Administrator\Documents\Tencent Files\914983053\FileRecv\JeeSite(myeclipse版本)"/>
+			<item value="C:\Users\Administrator\Documents\Tencent Files\914983053\FileRecv\jeesite-master-mybatis\jeesite-master"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+</section>

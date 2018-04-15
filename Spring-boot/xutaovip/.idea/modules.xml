@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/factorypattern-0305/factorypattern-0305.iml" filepath="$PROJECT_DIR$/factorypattern-0305/factorypattern-0305.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxy-0121/proxy-0121.iml" filepath="$PROJECT_DIR$/proxy-0121/proxy-0121.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxypattern-0312/proxypattern-0312.iml" filepath="$PROJECT_DIR$/proxypattern-0312/proxypattern-0312.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rmi-0317/rmi-0317.iml" filepath="$PROJECT_DIR$/rmi-0317/rmi-0317.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serializable-0106/serializable-0106.iml" filepath="$PROJECT_DIR$/serializable-0106/serializable-0106.iml" />
+      <module fileurl="file://$PROJECT_DIR$/singleton-0312/singleton-0312.iml" filepath="$PROJECT_DIR$/singleton-0312/singleton-0312.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xutaovip.iml" filepath="$PROJECT_DIR$/xutaovip.iml" />
+    </modules>
+  </component>
+</project>

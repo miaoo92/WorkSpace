@@ -1,0 +1,9 @@
+#Tue Sep 08 19:57:08 CST 2015
+SERVER_ENABLEMENT=true
+LIBRARY_PATH="C\:\\Program Files (x86)\\Java\\jdk1.7.0_40\\bin;E\:\\Aurogon Games\\apache-tomcat-7.0.23\\bin"
+eclipse.preferences.version=1
+JDK_HOME=C\:\\Program Files (x86)\\Java\\jdk1.7.0_40
+TOMCAT_BASE=E\:\\Aurogon Games\\apache-tomcat-7.0.23
+ENDORSED_DIRS="E\:\\Aurogon Games\\apache-tomcat-7.0.23/common/endorsed"
+TOMCAT_HOME=E\:\\Aurogon Games\\apache-tomcat-7.0.23
+TOMCAT_TEMP=E\:\\Aurogon Games\\apache-tomcat-7.0.23\\temp

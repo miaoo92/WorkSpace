@@ -1,0 +1,25 @@
+package com.demo.test;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.demo.bean.ExampleBean;
+import com.demo.bean.MessageBean;
+
+public class testcase {
+
+	ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");	
+	
+//	@Test
+	public void testMessageBean(){
+		MessageBean bean = ac.getBean("messageBean",MessageBean.class); 
+		bean.execute();
+	}
+	
+	@Test
+	public void testExampleBean(){
+		ExampleBean bean = ac.getBean("ExampleBean",ExampleBean.class);
+		bean.execute();
+	}
+}
