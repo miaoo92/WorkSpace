@@ -27,7 +27,7 @@ public class UserRepository {
 
 
     public boolean save(User user){
-        System.out.println("save User :"+user);
+        System.out.printf("[Thread : %s ]save User : %s \n",Thread.currentThread().getName(),user);
         return true;
     }
 
