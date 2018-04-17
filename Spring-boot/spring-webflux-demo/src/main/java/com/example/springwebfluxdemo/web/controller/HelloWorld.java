@@ -5,10 +5,7 @@ import com.example.springwebfluxdemo.repository.UserRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -33,7 +30,7 @@ public class HelloWorld {
 
     @PostMapping("/user/save")
     @ResponseBody
-    public Mono<User> saveUser(User user){
+    public Mono<User> saveUser(@RequestBody User user){
         if(userRespository.saveUser(user)){
             return Mono.just(user);
         }
