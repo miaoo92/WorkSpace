@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 public class DataSourceConfiguration {
 
     @Bean
-    @Primary
+    @Primary   //因为配置了多数据源，因此要指定哪个为主
     public DataSource masterDataSource(){
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         DataSource dataSource = dataSourceBuilder.driverClassName("com.mysql.jdbc.Driver")
@@ -36,7 +36,5 @@ public class DataSourceConfiguration {
                 .password("root").build();
         return dataSource;
     }
-
-
 
 }
