@@ -26,7 +26,7 @@ public class RestDemoController {
     public Map<String ,Object> data(){
         Map<String ,Object> data = new HashMap<>();
         data.put("name","xiaomage");
-        data.put("passwd","123");
+        data.put("password","123");
         return data;
     }
 
