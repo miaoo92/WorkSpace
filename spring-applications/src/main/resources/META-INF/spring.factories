@@ -1,0 +1,13 @@
+# Initializers
+org.springframework.context.ApplicationContextInitializer=\
+com.imooc.application.context.AfterHelloWorldApplicationContextInitializer,\
+com.imooc.application.context.HelloWorldApplicationContextInitializer
+
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+com.imooc.application.listener.AfterHelloWorldApplicationListener,\
+com.imooc.application.listener.HelloWorldApplicationListener
+
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.imooc.application.run.HelloWorldRunListener

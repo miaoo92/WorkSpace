@@ -1,0 +1,23 @@
+package com.segmentfault.controller;
+
+import com.segmentfault.domain.Person;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+
+/**
+ * TODO
+ *
+ * @author miaoo
+ * @since 2018/11/12
+ */
+@RestController
+public class PersonController {
+
+    @PostMapping("/person/save")
+    public Person save(@Valid @RequestBody Person person){
+        return person;
+    }
+}

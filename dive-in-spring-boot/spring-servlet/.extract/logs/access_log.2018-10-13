@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [13/Oct/2018:22:39:48 +0800] GET /completable/hello-world HTTP/1.1 200 11 http-bio-8080-exec-1 115
+0:0:0:0:0:0:0:1 - - [13/Oct/2018:22:39:59 +0800] GET /completable/hello-world HTTP/1.1 200 11 http-bio-8080-exec-3 9

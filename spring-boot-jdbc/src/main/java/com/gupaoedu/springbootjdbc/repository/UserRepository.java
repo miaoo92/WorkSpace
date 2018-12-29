@@ -44,12 +44,12 @@ public class UserRepository {
     private final PlatformTransactionManager platformTransactionManager;
 
     @Autowired
-    public UserRepository(DataSource dataSource, DataSource materDataSource,
+    public UserRepository(DataSource dataSource, DataSource masterDataSource,
                           DataSource slaveDataSource,
                           JdbcTemplate jdbcTemplate,
                           PlatformTransactionManager platformTransactionManager) {
         this.dataSource = dataSource;
-        this.materDataSource = materDataSource;
+        this.materDataSource = masterDataSource;
         this.slaveDataSource = slaveDataSource;
         this.jdbcTemplate = jdbcTemplate;
         this.platformTransactionManager = platformTransactionManager;
@@ -89,7 +89,7 @@ public class UserRepository {
 
     public boolean jdbcSave(User user) throws SQLException {
         System.out.printf("[Thread : %s ]save User : %s \n",Thread.currentThread().getName(),user);
-        Boolean success = false;
+        boolean success = false;
         Connection connection = null;
         try {
             connection = dataSource.getConnection();
